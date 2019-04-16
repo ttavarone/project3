@@ -1,0 +1,248 @@
+h1 {
+	font-family: 'Fjalla One', sans-serif;
+	font-size: 350%;
+	margin-top: 5%;
+	margin-left: 2%;
+	margin-bottom: 0%;
+}
+
+#login {
+	margin: auto;
+	margin-top: 5%;
+	border: 1px solid black;
+	border-radius: 3%;
+	width: 35%;
+	padding: 1%;
+}
+
+#user_prof {
+	margin: auto;
+}
+
+#logout_button {
+	float:right;
+}
+
+#navbar_brand {
+	margin-left: 1%;
+}
+
+p {
+	margin: auto;
+}
+
+.jumbotron {
+	background-color: white;	
+	width: 75%;
+	margin: auto;
+}
+
+.bg-dark {
+	background-color: #c38d9e
+}
+
+a.nav-link {
+	color: black;
+}
+
+body {
+	background-image: radial-gradient(#c1c8e4, #84ceeb);
+}
+
+
+main {
+	padding: 1%;
+	margin: 0 0 30px 0;	
+	background-image: radial-gradient(#c1c8e4, #84ceeb);
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+}
+
+section#biotext {
+  width: 44%;
+  float: right;
+  margin: 2%;
+}
+
+p.genericparagraph {
+	margin: 2%;
+}
+
+img#photoofme {
+  width: 44%;
+  margin: 0 2% 0 2%;
+  border-radius: 2%;
+  float:left;
+}
+
+img#resume {
+	margin-left: 12%;
+	margin-right: 12%;
+	margin-top: 5%;
+	border: 3px solid #05386b;
+	border-radius: 4px;
+	box-shadow: 5px 5px #379683;
+	width: 75%;
+}
+
+img#ttrbox {
+	width: 25%;
+	float: right;
+}
+
+img#lzrmze {
+	width: 25%;
+	float: right;
+}
+
+@media print {
+	nav {
+		display: none;
+	}
+	h1 {
+		display: none;
+	}
+	footer {
+		display: none;
+	}
+	body {
+		background-color: white;
+	}
+	a.btn-lg {
+		display: none;
+	}
+	img#resume {
+		border: none;
+		width: 100%;
+		margin: auto;
+	}
+
+}
+
+main h2 {
+  font-family: 'Raleway', sans-serif;
+  margin-bottom: 5%;
+  margin-top: 2.5%;
+}
+
+div h1 {
+  font-family: 'PT Sans', sans-serif;
+  font-size: 400%;
+  font-kerning: auto;
+  text-align: center;
+}
+
+.btn-secondary {
+	background-color: #05386b;
+}
+
+tr, td, th{
+	border: 3px solid rgba(0,0,0,.125);
+	width: 1%;
+	padding: 1%;
+}
+
+th {
+	font-size: 125%;
+	font-family: 'Lato', sans-serif;
+	text-decoration: underline;
+}
+table {
+	width: 50%;
+	margin: auto;
+}
+
+a.navbar-brand {
+  font-family: 'Raleway', sans-serif;
+  font-size: 25px;
+  font-kerning: none;
+}
+
+div.card {
+	margin-top: 3%;
+}
+
+div.card-header {
+	background-color: #379683;
+}
+
+
+ol {
+	float: left;
+	width: 45%;
+}
+
+a.btn-primary {
+	margin: 3% 0 0 0;
+}
+
+a#githublink {
+	margin-left: 2%;
+	margin-bottom: 5%;
+}
+
+footer {
+	background-color: white;
+	margin: auto;
+	width: 25%;
+	border-top-right-radius: 5px;
+	border-top-left-radius: 5px;
+	text-align: center;
+}
+
+footer a {
+	padding: 1%;
+	background-color: white;
+	margin: auto;
+}
+
+footer nav {
+	width: 100%;
+	margin: auto;
+	float: left;
+	background-color: white;
+}
+
+footer p {
+	margin: auto;
+}
+
+@media only screen and (max-width: 920px) {
+  /* For mobile phones: */
+  footer {
+  	width: 100%;
+  	text-align: center;
+  }
+  footer nav{
+    display: none;
+  }
+
+  p.biotext {
+  	margin: auto;
+  	width: 100%;
+  }
+
+  a.btn\\btn-primary\\btn-sm\\active {
+  	display: none;
+  }
+
+  div > a.btn {
+  	display: none;
+  }
+
+  img#photoofme {
+  	margin: auto;
+  	width: 100%;
+  }
+
+  table {
+  	width: 100%;
+  	margin: auto;
+  }
+
+  section#biotext {
+  	float: none;
+  	width: 100%;
+  	margin: auto;
+  }
+}

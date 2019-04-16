@@ -1,0 +1,6 @@
+[16-Apr-2019 18:17:53 UTC] PHP Parse error:  syntax error, unexpected 'while' (T_WHILE) in /home3/breimern/public_html/th26tava/projects/project3/update_user.php on line 19
+[16-Apr-2019 18:19:43 UTC] PHP Parse error:  syntax error, unexpected 'while' (T_WHILE) in /home3/breimern/public_html/th26tava/projects/project3/update_user.php on line 19
+[16-Apr-2019 18:19:51 UTC] PHP Parse error:  syntax error, unexpected '{' in /home3/breimern/public_html/th26tava/projects/project3/update_user.php on line 19
+[16-Apr-2019 18:19:52 UTC] PHP Parse error:  syntax error, unexpected '{' in /home3/breimern/public_html/th26tava/projects/project3/update_user.php on line 19
+[16-Apr-2019 18:19:55 UTC] PHP Parse error:  syntax error, unexpected '{' in /home3/breimern/public_html/th26tava/projects/project3/update_user.php on line 19
+[16-Apr-2019 19:35:25 UTC] PHP Fatal error:  Call to undefined function get_author() in /home3/breimern/public_html/th26tava/projects/project3/functions.php on line 13
