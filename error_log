@@ -1,6 +1,6 @@
-[16-Apr-2019 18:17:53 UTC] PHP Parse error:  syntax error, unexpected 'while' (T_WHILE) in /home3/breimern/public_html/th26tava/projects/project3/update_user.php on line 19
-[16-Apr-2019 18:19:43 UTC] PHP Parse error:  syntax error, unexpected 'while' (T_WHILE) in /home3/breimern/public_html/th26tava/projects/project3/update_user.php on line 19
-[16-Apr-2019 18:19:51 UTC] PHP Parse error:  syntax error, unexpected '{' in /home3/breimern/public_html/th26tava/projects/project3/update_user.php on line 19
-[16-Apr-2019 18:19:52 UTC] PHP Parse error:  syntax error, unexpected '{' in /home3/breimern/public_html/th26tava/projects/project3/update_user.php on line 19
-[16-Apr-2019 18:19:55 UTC] PHP Parse error:  syntax error, unexpected '{' in /home3/breimern/public_html/th26tava/projects/project3/update_user.php on line 19
-[16-Apr-2019 19:35:25 UTC] PHP Fatal error:  Call to undefined function get_author() in /home3/breimern/public_html/th26tava/projects/project3/functions.php on line 13
+[17-Apr-2019 00:56:46 UTC] PHP Fatal error:  Call to undefined function run_query() in /home3/breimern/public_html/th26tava/projects/project3/manage_courses.php on line 15
+[17-Apr-2019 01:35:00 UTC] PHP Parse error:  syntax error, unexpected '}' in /home3/breimern/public_html/th26tava/projects/project3/index.php on line 5
+[17-Apr-2019 01:42:55 UTC] PHP Fatal error:  Call to undefined function run_query() in /home3/breimern/public_html/th26tava/projects/project3/manage_courses.php on line 15
+[17-Apr-2019 02:01:44 UTC] PHP Parse error:  syntax error, unexpected '}' in /home3/breimern/public_html/th26tava/projects/project3/manage_courses.php on line 37
+[17-Apr-2019 02:21:17 UTC] PHP Parse error:  syntax error, unexpected '}' in /home3/breimern/public_html/th26tava/projects/project3/delete_user.php on line 14
+[17-Apr-2019 02:21:28 UTC] PHP Parse error:  syntax error, unexpected '}' in /home3/breimern/public_html/th26tava/projects/project3/delete_user.php on line 14
