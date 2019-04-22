@@ -1,5 +1,5 @@
 <?php
-	
+require('functions.php');
 require('functions_database.php');
 
 $table_name = "th26tava_users";
@@ -17,6 +17,7 @@ $sql = "CREATE TABLE $table_name (
 	PRIMARY KEY (uid)
 )";
 	
-create_table($sql, $table_name);	
+
+make_page('Create Table', create_table($sql, $table_name));	
 	
 ?>

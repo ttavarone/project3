@@ -1,6 +1,9 @@
-[17-Apr-2019 00:56:46 UTC] PHP Fatal error:  Call to undefined function run_query() in /home3/breimern/public_html/th26tava/projects/project3/manage_courses.php on line 15
-[17-Apr-2019 01:35:00 UTC] PHP Parse error:  syntax error, unexpected '}' in /home3/breimern/public_html/th26tava/projects/project3/index.php on line 5
-[17-Apr-2019 01:42:55 UTC] PHP Fatal error:  Call to undefined function run_query() in /home3/breimern/public_html/th26tava/projects/project3/manage_courses.php on line 15
-[17-Apr-2019 02:01:44 UTC] PHP Parse error:  syntax error, unexpected '}' in /home3/breimern/public_html/th26tava/projects/project3/manage_courses.php on line 37
-[17-Apr-2019 02:21:17 UTC] PHP Parse error:  syntax error, unexpected '}' in /home3/breimern/public_html/th26tava/projects/project3/delete_user.php on line 14
-[17-Apr-2019 02:21:28 UTC] PHP Parse error:  syntax error, unexpected '}' in /home3/breimern/public_html/th26tava/projects/project3/delete_user.php on line 14
+[21-Apr-2019 16:37:50 UTC] PHP Parse error:  syntax error, unexpected '}' in /home3/breimern/public_html/th26tava/projects/project3/create_course.php on line 28
+[21-Apr-2019 16:38:42 UTC] PHP Parse error:  syntax error, unexpected '.=' (T_CONCAT_EQUAL) in /home3/breimern/public_html/th26tava/projects/project3/create_course.php on line 22
+[22-Apr-2019 17:46:31 UTC] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE) in /home3/breimern/public_html/th26tava/projects/project3/update_course.php on line 46
+[22-Apr-2019 18:06:31 UTC] PHP Fatal error:  Call to undefined function make_page() in /home3/breimern/public_html/th26tava/projects/project3/functions_database.php on line 38
+[22-Apr-2019 18:09:35 UTC] PHP Fatal error:  Call to undefined function make_page() in /home3/breimern/public_html/th26tava/projects/project3/create_users_table.php on line 21
+[22-Apr-2019 18:46:14 UTC] PHP Fatal error:  Call to undefined function run_query() in /home3/breimern/public_html/th26tava/projects/project3/update_user_script.php on line 8
+[22-Apr-2019 19:53:44 UTC] PHP Parse error:  syntax error, unexpected '}' in /home3/breimern/public_html/th26tava/projects/project3/change_pwd_script.php on line 47
+[22-Apr-2019 20:13:07 UTC] PHP Parse error:  syntax error, unexpected '}' in /home3/breimern/public_html/th26tava/projects/project3/functions.php on line 246
+[22-Apr-2019 21:02:38 UTC] PHP Parse error:  syntax error, unexpected '}' in /home3/breimern/public_html/th26tava/projects/project3/user_profile.php on line 31

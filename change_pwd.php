@@ -1,31 +1,26 @@
 <?php
 require('functions.php');
 require('functions_database.php');
-
-$page_name = 'Update User Info';
+$page_name = 'Change Password';
 $table_name = 'th26tava_users';
 session_start();
-$uid = $_GET['uid'];
 
 if ($_SESSION['uid']) {
-  if(empty($_GET)){$uid = $_SESSION['uid'];}
+	$uid = $_SESSION['uid'];
       $content = '
-      <form method="post" action="update_user_script.php?uid='.$uid.'">
+      <form method="post" action="change_pwd_script.php">
       <div id="inputGroupDiv" class="input-group">
-      	<div class="input-group">
-        		<div class="input-group-prepend">
-          		<span class="input-group-text">First and last name</span>
-        		</div>
-        		<input type="text" aria-label="First name" class="form-control" name="first">
-        		<input type="text" aria-label="Last name" class="form-control" name="last">
+      	<div id="inputGroup" class="input-group-prepend">
+      		<span id="span" class="input-group-text">Old Password</span>
+        	<input type="password" aria-label="Old Password" class="form-control" name="opwd">
       	</div>
       	<div id="inputGroup" class="input-group-prepend">
-      		<span id="span" class="input-group-text">Email</span>
-        	<input type="text" aria-label="Email" class="form-control" name="email">
+      		<span id="span" class="input-group-text">New Password</span>
+        	<input type="text" aria-label="New Password" class="form-control" name="pwd">
       	</div>
       	<div id="inputGroup" class="input-group-prepend">
-      		<span id="span" class="input-group-text">Bio</span>
-        	<input type="text" aria-label="Bio" class="form-control" name="bio">
+      		<span id="span" class="input-group-text">Re-type New Password</span>
+        	<input type="text" aria-label="Re-type New Password" class="form-control" name="repwd">
       	</div>
         </div>
       	<button type="submit" class="btn btn-primary">Submit</button></form>
@@ -39,5 +34,4 @@ if ($_SESSION['uid']) {
                       ';};
 
 make_page($page_name, $content);
-
 ?>

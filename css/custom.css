@@ -6,6 +6,10 @@ h1 {
 	margin-bottom: 0%;
 }
 
+h1.display-4 {
+	margin: auto;
+}
+
 #login {
 	margin: auto;
 	margin-top: 5%;
@@ -13,6 +17,7 @@ h1 {
 	border-radius: 3%;
 	width: 35%;
 	padding: 1%;
+	background-color: white;
 }
 
 #user_prof {
@@ -26,110 +31,83 @@ h1 {
 #navbar_brand {
 	margin-left: 1%;
 }
+#card {
+	margin: auto;
+	width: 75%;
+}
+
+#listgroup {
+	width: 100%;
+	margin: auto;
+}
+
+#scroll {
+	overflow: scroll;
+	width: 50%;
+	max-height: 100vh;
+	background-color: white;
+	margin: auto;
+}
+
+#adminNav {
+	margin:auto;
+	width: 100%;
+}
+
+#userOpt {
+	margin: auto;
+	width:50%;
+}
+
+#courseOpt {
+	margin: auto;
+	width: 50%;
+}
+
+#table {
+	background-color: white;
+}
+
+#loginAlert {
+	width: 50%;
+	margin: auto;
+}
+
+#inputGroup {
+	margin: 2%;
+	width: 80%;
+}
+
+#inputGroupDiv {
+	margin: auto;
+	width: 75%;
+	background-color: #B5C0D2;
+	padding: 2%;
+	border-radius: 1%;
+}
+
+#span {
+	width: 35%;
+}
 
 p {
 	margin: auto;
 }
 
-.jumbotron {
-	background-color: white;	
+.jumbotron {	
 	width: 75%;
 	margin: auto;
-}
-
-.bg-dark {
-	background-color: #c38d9e
-}
-
-a.nav-link {
-	color: black;
+	padding: 2%;
 }
 
 body {
-	background-image: radial-gradient(#c1c8e4, #84ceeb);
+	background-image: url(https://www.wallpaperup.com/uploads/wallpapers/2015/04/02/653105/09d95a6f0e5f6e6a79bcbc58aa1222ad.jpg);
 }
 
 
 main {
 	padding: 1%;
-	margin: 0 0 30px 0;	
-	background-image: radial-gradient(#c1c8e4, #84ceeb);
-	border-bottom-right-radius: 10px;
-	border-bottom-left-radius: 10px;
-}
-
-section#biotext {
-  width: 44%;
-  float: right;
-  margin: 2%;
-}
-
-p.genericparagraph {
-	margin: 2%;
-}
-
-img#photoofme {
-  width: 44%;
-  margin: 0 2% 0 2%;
-  border-radius: 2%;
-  float:left;
-}
-
-img#resume {
-	margin-left: 12%;
-	margin-right: 12%;
-	margin-top: 5%;
-	border: 3px solid #05386b;
-	border-radius: 4px;
-	box-shadow: 5px 5px #379683;
-	width: 75%;
-}
-
-img#ttrbox {
-	width: 25%;
-	float: right;
-}
-
-img#lzrmze {
-	width: 25%;
-	float: right;
-}
-
-@media print {
-	nav {
-		display: none;
-	}
-	h1 {
-		display: none;
-	}
-	footer {
-		display: none;
-	}
-	body {
-		background-color: white;
-	}
-	a.btn-lg {
-		display: none;
-	}
-	img#resume {
-		border: none;
-		width: 100%;
-		margin: auto;
-	}
-
-}
-
-main h2 {
-  font-family: 'Raleway', sans-serif;
-  margin-bottom: 5%;
-  margin-top: 2.5%;
-}
-
-div h1 {
-  font-family: 'PT Sans', sans-serif;
-  font-size: 400%;
-  font-kerning: auto;
-  text-align: center;
+	margin: 1% 0 1% 0;	
 }
 
 .btn-secondary {
@@ -154,7 +132,7 @@ table {
 
 a.navbar-brand {
   font-family: 'Raleway', sans-serif;
-  font-size: 25px;
+  font-size: 20px;
   font-kerning: none;
 }
 
@@ -166,32 +144,23 @@ div.card-header {
 	background-color: #379683;
 }
 
-
-ol {
-	float: left;
-	width: 45%;
-}
-
 a.btn-primary {
 	margin: 3% 0 0 0;
-}
-
-a#githublink {
-	margin-left: 2%;
-	margin-bottom: 5%;
 }
 
 footer {
 	background-color: white;
 	margin: auto;
-	width: 25%;
+	width: 100%;
 	border-top-right-radius: 5px;
 	border-top-left-radius: 5px;
 	text-align: center;
+	bottom: 0;
+	height: 7vh;
 }
 
 footer a {
-	padding: 1%;
+	padding: 0.5%;
 	background-color: white;
 	margin: auto;
 }
@@ -209,40 +178,6 @@ footer p {
 
 @media only screen and (max-width: 920px) {
   /* For mobile phones: */
-  footer {
-  	width: 100%;
-  	text-align: center;
-  }
-  footer nav{
-    display: none;
-  }
+  
 
-  p.biotext {
-  	margin: auto;
-  	width: 100%;
-  }
-
-  a.btn\\btn-primary\\btn-sm\\active {
-  	display: none;
-  }
-
-  div > a.btn {
-  	display: none;
-  }
-
-  img#photoofme {
-  	margin: auto;
-  	width: 100%;
-  }
-
-  table {
-  	width: 100%;
-  	margin: auto;
-  }
-
-  section#biotext {
-  	float: none;
-  	width: 100%;
-  	margin: auto;
-  }
 }

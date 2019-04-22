@@ -29,7 +29,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
       else {$_SESSION['admin'] = null;}; // otherwise make it false, no admin access
 
       redirect('user_profile.php');
-    };
+    }
+    else {
+      $content = '
+        <div class="alert alert-warning" role="alert">
+            User password incorrect. Click back to try again.
+        </div>
+      ';
+      make_page('Login Error', $content);
+      die();
+    }
   };
 };
 
@@ -45,19 +54,18 @@ $content = '
 <div class="row">
   <div class="form-group col">
     <label for="email">Email address</label>
-    <input type="email" class="form-control" name="email" id="email" placeholder="Enter email">
+    <input type="email" class="form-control" name="email" id="email" placeholder="Enter email" required>
   </div>
   </div>
   <div class="row">
   <div class="form-group col">
     <label for="pwd">Password</label>
-    <input type="password" class="form-control" name="pwd" id="pwd" placeholder="Password">
+    <input type="password" class="form-control" name="pwd" id="pwd" placeholder="Password" required>
   </div>
   </div>
   <button type="submit" class="btn btn-success login">Login</button>
-  <button href="join.php" class="btn btn-primary d-inline">Join</button>
+  <a role="button" href="join.php" class="btn btn-primary d-inline">Join</a>
 </form>
-
 ';
 
 // Here you can add embedded CSS for the login form

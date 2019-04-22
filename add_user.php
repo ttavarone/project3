@@ -18,6 +18,7 @@ if ($_POST) {
 
 	  	foreach($_POST as $values => $fields){
 	  		$submitted_.$values = trim($fields);
+	  		$submitted_.$values = addslashes($submitted_.$values);
 	  	};
 
 		if ($submitted_pwd == $submitted_repwd) {
@@ -26,12 +27,9 @@ if ($_POST) {
 			('','$submitted_email', '$submitted_pwd','$submitted_first','$submitted_last','$submitted_school','$submitted_major','$submitted_gyear','$submitted_bio');";
           
             run_query($sql);
-			
-			session_start();
-			$_SESSION['uid'] = $submitted_uid;
         }
 };
 
-redirect('user_profile.php?uid='.$_SESSION['uid']);	
+redirect('login.php');	
 	
 ?>

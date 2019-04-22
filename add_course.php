@@ -15,21 +15,19 @@ if ($_POST) {
 	  	$submitted_sem = $_POST['sem'];
 	  	$submitters_uid = $_SESSION['uid'];
 
+	  	if(!$submitters_uid){
+	  		$submitters_uid = '1';
+	  	}
+
 	  	foreach($_POST as $values => $fields){
 	  		$submitted_.$values = trim($fields);
 	  	};
 
-		if ($submitted_pwd == $submitted_repwd) {
-			//add user to database
-			$sql = "INSERT INTO $table_name (`cid`,`sub`,`num`,`title`,`descr`,`year`,`sem`,`uid`) VALUES
-			('','$submitted_sub', '$submitted_num','$submitted_title','$submitted_descr','$submitted_year','$submitted_sem', '$submitters_uid');";
-          
-            run_query($sql);
-			
-			session_start();
-			$_SESSION['uid'] = $submitted_uid;
-        }
+		$sql = "INSERT INTO $table_name (`cid`,`sub`,`num`,`title`,`descr`,`year`,`sem`,`uid`) VALUES
+		('','$submitted_sub', '$submitted_num','$submitted_title','$submitted_descr','$submitted_year','$submitted_sem', '$submitters_uid');";
+      
+        run_query($sql);
 };
 
-redirect('user_profile.php?uid='.$_SESSION['uid']);
+redirect('user_profile.php');
 ?>

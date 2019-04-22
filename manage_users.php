@@ -9,7 +9,8 @@
     if($_SESSION['uid'] == '1'){
     	$users = run_query("SELECT uid, first, last, email FROM th26tava_users");
 
-        $content = '<ul id="listgroup" class="list-group">
+    	$content = '<h2>'.$page_name.'</h2>';
+        $content .= '<ul id="listgroup" class="list-group">
         ';
         while($user = $users->fetch_assoc()){
           $uid = $user['uid'];
@@ -18,16 +19,16 @@
           $email = $user['email'];
           
           $content .= '<li class="list-group-item">
-                          <a href="update_user.php" role="button" class="btn btn-warning d-inline">Edit</a>
-                          <a href="delete_user.php?uid='.$uid.'" role="button" class="btn btn-danger d-inline">X</a>
+                          <a href="update_user.php?uid='.$uid.'" role="button" class="btn btn-warning d-inline">Edit</a>
+                          <a id="'.$uid.'" role="button" class="btn btn-danger d-inline deleteu">X</a>
                           <a class="d-inline">'.$first.' '.$last.', '.$email.'</a>
                       </li>';
         }
         $content .= '</ul>';
       }
     }
-    else{$content = '<div class="alert alert-warning" role="alert">
-                        Error: Must be logged in as admin to manage users!
+    else{$content = '<div id="loginAlert" class="alert alert-warning" role="alert">
+                        Error: Must be logged in as admin!
                       </div>
                       <a href="login.php" class="btn btn-primary btn-lg" tabindex="-1" role="button">Login</a>
                       ';};

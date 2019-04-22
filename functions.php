@@ -27,14 +27,18 @@ $user_pages = array(
   'user_profile.php' => 'Profile',
   'update_user.php' => 'Edit',
   'manage_courses.php' => 'Manage Courses',
-  'add_course.php' => 'Add Course',);   
+  'create_course.php' => 'Add Course',
+  'change_pwd.php' => 'Change Password',
+);   
                 
 $admin_pages = array(
   'admin_page.php' => 'Main Admin',
   'manage_users.php' => 'Manage users',
   'manage_courses.php' => 'Manage courses',
   'show_table.php?table_name=th26tava_users' => 'Show users table raw',
-  'show_courses_table.php?table_name=?th26tava_courses' => 'Show courses table raw',);
+  'show_table.php?table_name=th26tava_courses' => 'Show courses table raw',
+  'change_pwd.php' => 'Change Password',
+);
 
 /* -----------------------------------------------------------------------
    Select menu
@@ -94,11 +98,13 @@ function make_top($page_name, $ext_fonts = null, $style = null) {
 function make_bottom($javascript = null) {
   return '
       <!-- javascript -->
-      <style>'.$javascript.'</style>
-      <script src="js/custom.js"></script>
-      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script>'.$javascript.'</script>
+      <script src="https://code.jquery.com/jquery-3.4.0.js"
+              integrity="sha256-DYZMCC8HTC+QDr5QNaIcfR7VSPtcISykd+6eSmBW5qo="
+              crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+      <script src="js/custom.js"></script>
     </body>
     </html>
   ';
@@ -109,26 +115,22 @@ function make_bottom($javascript = null) {
    page name and then any custom content for that webpage
 ----------------------------------------------------------------------- */
 
-function make_page($page_name, $page_content, $add_content = null) {
+function make_page($page_name, $page_content, $add_script = null) {
 
   global $author;
   $author = $_SESSION['author'];
-  
-  $cards = null;
 
   echo make_top($page_name);
   echo make_navbar();
   
   
   echo '<main class="container">';
-  //echo file_get_contents($page_content);
   echo $page_content;
-  echo $cards;
-  echo $courses;
+  echo back_button($page_name);
   echo '</main>';
 
   echo make_footer();
-  echo make_bottom();
+  echo make_bottom($add_script);
 }
 
 /* -----------------------------------------------------------------------
@@ -143,9 +145,14 @@ function make_navbar() {
   if(isset($_SESSION['uid'])){
     //$author = ($_SESSION['uid'], 'th26tava_users'); // sets author name (top on header) if session is started
     $logout = '<li id="logout_button" class="nav-item">
-                <a class="nav-link" href="logout.php" style="color: white">Logout</a>
+                <a class="nav-link" href="logout.php" style="color: #B5C0D2">Logout</a>
               </li>';
-  };
+
+    $home_btn_val = 'user_profile.php';
+  }
+  else {
+    $home_btn_val = 'login.php';
+  }
 
   foreach ($pages as $link => $name) { // makes a menu for the user based on the uid from session
       $menu_item .= '<a class="dropdown-item" href="'.$link.'">'.$name.'</a><div class="dropdown-divider"></div>';
@@ -153,16 +160,16 @@ function make_navbar() {
   
   // will need to change author header style and link 
   return '
-        <header style="background-color: #05386b">
+        <header style="background-color: #030736">
           <!-- website navbar -->
           <ul class="nav nav-pills">
-          <a id="navbar_brand" class="navbar-brand" href="index.php" style="color: #edf5e1">'.$author.'</a> 
+          <a id="navbar_brand" class="navbar-brand" href="'.$home_btn_val.'" style="color: #B5C0D2">'.$author.'</a> 
             <li class="nav-item">
-              <a class="nav-link" href="index.php" style="color: white">Home</a>
+              <a class="nav-link" href="'.$home_btn_val.'" style="color: #B5C0D2">Home</a>
             </li>
             
             <li class="nav-item  justify-content-end">
-              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" style="color: white">Account Settings</a>
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" style="color: #B5C0D2">Account Settings</a>
                 <div class="dropdown-menu">
                   '.$menu_item.'
                 </div>
@@ -198,48 +205,12 @@ function make_navbar() {
   }
 
   /* -----------------------------------------------------------------------
-   Makes the courses page, will be removed eventually for database 
-   implementation
------------------------------------------------------------------------ */
-
-  function make_courses() {
-
-    $file = file('courses.csv');
-
-    foreach ($file as $line) {
-      
-      $arr = explode(',', $line);      
-      /* This creates an array called record
-        Where the course title is the array index
-        $arr[0] is the year
-        $arr[1] is the semester
-        $arr[2] is the course number, i.e., CSIS-110 */
-        
-      $record[$arr[2]] = array($arr[1], $arr[0]);
-    }
-
-    ksort($record);
-
-    $course_table = '<table>';
-      foreach ($record as $id => $details) {
-      $course_table .= '<tr><th>'.$id.'</th>';
-          foreach ($details as $value) {
-            $course_table .= '<td>'.$value.'</td>';
-          }
-        $course_table .= '</tr>';
-      }  
-    $course_table .= '</table>';
-
-    return $course_table;
-  }
-
-  /* -----------------------------------------------------------------------
    Makes bootstrap cards
 ----------------------------------------------------------------------- */
 
-  function make_card($user_name, $content, $link = null, $link_name = null){
+  function make_card($title, $content, $link = null, $link_name = null){
       return '
-          <div id="user_prof" class="col-md-6">
+          <div id="card">
             <div class="card">
               <div class="card-body">
                 <h5 id="users_name" class="card-title">'.$user_name.'</h5>
@@ -258,6 +229,20 @@ function make_navbar() {
 ---------------------------------------------------------------------------- */
 function redirect($file_name) {
   header("Location: $file_name");
+}
+
+ /* ----------------------------------------------------------------------------
+   Creates a back button for every page except LOGIN
+---------------------------------------------------------------------------- */
+
+function back_button($page_name){
+  if($page_name == 'Login'){
+    $out = '';
+  }
+  else{
+    $out = '<button class="backbtn btn btn-primary">Back</button>';
+  }
+  return $out;
 }
 
 ?>

@@ -35,7 +35,8 @@ function create_table($sql, $table_name) {
 	else 
 		$content = "Table <b>$table_name</b> was NOT created successfully";
 	
-	make_page("Table $table_name", $content);		
+	//make_page("Table $table_name", $content);
+	return '<p>Success!</p>';		
 }
 
 
@@ -45,7 +46,7 @@ function create_table($sql, $table_name) {
 ----------------------------------------------------------------------- */	
 function show_table($table_name) {
 	
-	$cols = run_query("SHOW FULL COLUMNS FROM $table_name");
+	$cols = run_query("SHOW COLUMNS FROM $table_name");
 	$rows = run_query("SELECT * FROM $table_name");
 
 	$ths = '';
@@ -68,7 +69,7 @@ function show_table($table_name) {
 	
 	$out = '<h1>Table Data: <code>'.$table_name.'</code></h1>';
 	$out .=  '
-		<table class="table">
+		<table id="table" class="table">
 		 <thead>
 		   <tr>'.$ths.'<tr>
 		 </thead>
